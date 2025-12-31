@@ -1,0 +1,824 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Medical HTML-5 Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animated-headline.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/css/themify-icons.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		/* Fix hero section background responsiveness */
+		@media only screen and (max-width: 767px) {
+			.slider-area {
+				background-image: url(assets/img/hero/hero2.png) !important;
+			}
+			.slider-area .single-slider {
+				background-position: center center !important;
+				background-size: cover !important;
+			}
+		}
+		@media only screen and (min-width: 768px) and (max-width: 991px) {
+			.slider-area .single-slider {
+				background-position: center center !important;
+			}
+		}
+
+		/* Department specialty images - zoom and cover */
+		.dept_thumb {
+			overflow: hidden;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.dept_thumb img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			min-height: 400px;
+		}
+
+		/* About section image styling */
+		.about-img-single img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 8px;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+		}
+
+		@media only screen and (min-width: 992px) {
+			.about-img-single img {
+				max-height: 500px;
+				width: auto;
+				max-width: 100%;
+			}
+		}
+
+		@media only screen and (max-width: 991px) {
+			.about-img-single {
+				margin-bottom: 30px;
+			}
+			.about-img-single img {
+				width: 100%;
+				max-width: 500px;
+				margin: 0 auto;
+				display: block;
+			}
+		}
+
+		/* Clinic name in header */
+		.clinic-name {
+			background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			font-family: 'Georgia', 'Times New Roman', serif;
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: 1px;
+			line-height: 1.3;
+		}
+
+		@media only screen and (max-width: 1199px) {
+			.clinic-name {
+				font-size: 16px;
+				letter-spacing: 0.5px;
+			}
+		}
+
+		@media only screen and (max-width: 991px) {
+			.clinic-name {
+				display: none;
+			}
+		}
+
+		/* Doctor expertise list styling */
+		.doctor-expertise {
+			list-style: none;
+			padding-left: 0;
+			margin-bottom: 20px;
+		}
+
+		.doctor-expertise li {
+			padding: 8px 0;
+			padding-left: 30px;
+			position: relative;
+			font-size: 15px;
+			line-height: 1.6;
+			color: #10285d;
+		}
+
+		.doctor-expertise li i {
+			position: absolute;
+			left: 0;
+			top: 12px;
+			color: #396cf0;
+			font-size: 14px;
+		}
+
+		@media only screen and (max-width: 767px) {
+			.doctor-expertise li {
+				font-size: 14px;
+				padding: 6px 0;
+				padding-left: 25px;
+			}
+
+			.doctor-expertise li i {
+				top: 10px;
+				font-size: 12px;
+			}
+
+			.doctor-info h4 {
+				font-size: 16px !important;
+			}
+		}
+
+		/* Testimonial styling */
+		.testimonial-stars {
+			color: #ffc107;
+			font-size: 20px;
+		}
+
+		.testimonial-text {
+			font-size: 18px;
+			line-height: 1.8;
+			color: #10285d;
+			font-style: italic;
+			margin-bottom: 20px;
+			padding: 0 20px;
+		}
+
+		.testimonial-author {
+			font-size: 16px;
+			font-weight: 600;
+			color: #396cf0;
+			margin-top: 15px;
+		}
+
+		/* Testimonial carousel navigation */
+		.h1-testimonial-active {
+			position: relative;
+		}
+
+		.h1-testimonial-active .slick-arrow {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background: #396cf0;
+			color: #fff;
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			border: none;
+			font-size: 20px;
+			cursor: pointer;
+			z-index: 10;
+			transition: all 0.3s ease;
+			display: flex !important;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.h1-testimonial-active .slick-arrow:hover {
+			background: #2a5298;
+		}
+
+		.h1-testimonial-active .slick-prev {
+			left: -70px;
+		}
+
+		.h1-testimonial-active .slick-next {
+			right: -70px;
+		}
+
+		@media only screen and (max-width: 1199px) {
+			.h1-testimonial-active .slick-prev {
+				left: -50px;
+			}
+
+			.h1-testimonial-active .slick-next {
+				right: -50px;
+			}
+
+			.h1-testimonial-active .slick-arrow {
+				width: 40px;
+				height: 40px;
+				font-size: 18px;
+			}
+		}
+
+		@media only screen and (max-width: 767px) {
+			.testimonial-text {
+				font-size: 16px;
+				padding: 0 10px;
+			}
+
+			.testimonial-author {
+				font-size: 14px;
+			}
+
+			.testimonial-stars {
+				font-size: 18px;
+			}
+
+			.h1-testimonial-active .slick-prev {
+				left: 10px;
+			}
+
+			.h1-testimonial-active .slick-next {
+				right: 10px;
+			}
+
+			.h1-testimonial-active .slick-arrow {
+				width: 35px;
+				height: 35px;
+				font-size: 16px;
+				opacity: 0.9;
+			}
+		}
+	</style>
+</head>
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+<header>
+    <!--? Header Start -->
+    <div class="header-area">
+        <div class="main-header header-sticky">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <!-- Logo -->
+                    <div class="col-xl-4 col-lg-4 col-md-3">
+                        <div class="logo d-flex align-items-center">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="" style="height:80px; width:auto;"></a>
+                            <h3 class="clinic-name ml-3 mb-0">MIND AND BEHAVIOUR CLINIC</h3>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-9">
+                        <div class="menu-main d-flex align-items-center justify-content-end">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                <a href="#" class="btn header-btn">01654.066.456</a>
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+</header>
+<main>
+    <!--? slider Area Start-->
+    <div class="slider-area position-relative">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-7 col-lg-9 col-md-8 col-sm-9">
+                            <div class="hero__caption">
+                                <span>Our Head Doctor:</span>
+                                <h1 class="cd-headline letters scale">Dr. Manish Kumar
+                                    <strong class="cd-words-wrapper">
+                                        <b class="is-visible">MBBS</b>
+                                        <b>DPM</b>
+                                        <b>MD</b>
+                                    </strong>
+                                </h1>
+                                <p data-animation="fadeInLeft" data-delay="0.1s">Because your mental health matters.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider Area End-->
+    <!--? About Start-->
+    <div class="about-area section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 order-2 order-lg-1">
+                    <div class="about-caption mb-50">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle section-tittle2 mb-35">
+                            <span>About Our Clinic</span>
+                            <h2>Welcome To Mind and Behaviour Clinic</h2>
+                        </div>
+                        <p class="mb-3">At Mind and Behaviour Clinic, your mental well-being is our priority. Founded and personally managed by <strong>Dr. Manish Kumar</strong>, our clinic offers a compassionate and personalized approach to mental health care in the heart of Kankarbagh, Patna.</p>
+
+                        <p class="mb-3">Dr. Manish Kumar, a Senior Consultant in Psychiatry at Paras HMRI Hospital, brings over 25 years of dedicated experience in mental health and psychiatry. With specialized expertise in De-addiction, Adolescent Psychiatry, Geriatric Care, and childhood psychiatric disorders, Dr. Kumar has helped countless individuals and families navigate their mental health journeys with empathy and professional excellence.</p>
+
+                        <p class="mb-4">Whether you're seeking support for addiction, developmental disorders, sleep issues, or any mental health concern, you'll find a safe, non-judgmental space where healing begins. Dr. Kumar's patient-centered approach ensures that every individual receives the care and attention they deserve.</p>
+
+                        <a href="about.html" class="btn hero-btn">Learn More About Dr. Manish Kumar <i class="ti-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 order-1 order-lg-2">
+                    <!-- about-img -->
+                    <div class="about-img-single text-center mb-4 mb-lg-0">
+                        <img src="assets/img/gallery/about1.png" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About  End-->
+    <!--? department_area_start  -->
+    <div class="department_area section-padding2">
+        <div class="container">
+            <!-- Section Tittle -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-tittle text-center mb-100">
+                        <span>Our Specialties</span>
+                        <h2>Mental Health & Behavioral Services</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="depart_ment_tab mb-30">
+                        <!-- Tabs Buttons -->
+                        <ul class="nav" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="addiction-tab" data-toggle="tab" href="#addiction" role="tab" aria-controls="addiction" aria-selected="true">
+                                    <i class="fas fa-ban" style="font-size: 48px;"></i>
+                                    <h4>De-addiction</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="headache-tab" data-toggle="tab" href="#headache" role="tab" aria-controls="headache" aria-selected="false">
+                                    <i class="fas fa-moon" style="font-size: 48px;"></i>
+                                    <h4>Headache & Insomnia</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="dementia-tab" data-toggle="tab" href="#dementia" role="tab" aria-controls="dementia" aria-selected="false">
+                                    <i class="fas fa-user-md" style="font-size: 48px;"></i>
+                                    <h4>Dementia Care</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="sexual-tab" data-toggle="tab" href="#sexual" role="tab" aria-controls="sexual" aria-selected="false">
+                                    <i class="fas fa-heartbeat" style="font-size: 48px;"></i>
+                                    <h4>Sexual Disorders</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="epilepsy-tab" data-toggle="tab" href="#epilepsy" role="tab" aria-controls="epilepsy" aria-selected="false">
+                                    <i class="fas fa-stethoscope" style="font-size: 48px;"></i>
+                                    <h4>Epilepsy Care</h4>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="dept_main_info white-bg">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="addiction" role="tabpanel" aria-labelledby="addiction-tab">
+                        <!-- single_content  -->
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-lg-7">
+                                <div class="dept_info">
+                                    <h3>Addiction & De-addiction Support</h3>
+                                    <p>Dr. Manish Kumar specializes in treating various forms of addiction including substance abuse, alcohol dependency, and behavioral addictions. With compassionate care and evidence-based treatment approaches, we help patients overcome their dependencies and build healthier lives through comprehensive de-addiction programs.</p>
+                                    <a href="contact.html" class="dep-btn">Book Appointment<i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="dept_thumb">
+                                    <img src="assets/img/blog/deaddiction.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single_content  -->
+                    </div>
+                    <div class="tab-pane fade" id="headache" role="tabpanel" aria-labelledby="headache-tab">
+                        <!-- single_content  -->
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-lg-7">
+                                <div class="dept_info">
+                                    <h3>Headache & Insomnia Management</h3>
+                                    <p>Dr. Manish Kumar provides expert care for chronic headaches, migraines, and sleep disorders. With years of experience in treating insomnia and sleep-related issues, our clinic offers comprehensive assessment and personalized treatment plans to help you achieve better sleep quality and relief from persistent headaches.</p>
+                                    <a href="contact.html" class="dep-btn">Book Appointment<i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="dept_thumb">
+                                    <img src="assets/img/blog/headache.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single_content  -->
+                    </div>
+                    <div class="tab-pane fade" id="dementia" role="tabpanel" aria-labelledby="dementia-tab">
+                        <!-- single_content  -->
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-lg-7">
+                                <div class="dept_info">
+                                    <h3>Dementia Support & Care</h3>
+                                    <p>Dr. Manish Kumar offers specialized care for patients with dementia and cognitive disorders. Our clinic provides comprehensive assessment, diagnosis, and ongoing management for Alzheimer's disease and other forms of dementia, along with support and guidance for families caring for loved ones with memory disorders.</p>
+                                    <a href="contact.html" class="dep-btn">Book Appointment<i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="dept_thumb">
+                                    <img src="assets/img/blog/dementia.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single_content  -->
+                    </div>
+                    <div class="tab-pane fade" id="sexual" role="tabpanel" aria-labelledby="sexual-tab">
+                        <!-- single_content  -->
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-lg-7">
+                                <div class="dept_info">
+                                    <h3>Sexual Disorder Consultation</h3>
+                                    <p>Dr. Manish Kumar provides confidential and professional consultation for various sexual disorders and related psychological issues. With a sensitive and non-judgmental approach, we address concerns including sexual dysfunction, relationship issues, and intimacy problems through evidence-based therapeutic interventions.</p>
+                                    <a href="contact.html" class="dep-btn">Book Appointment<i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="dept_thumb">
+                                    <img src="assets/img/blog/sdisorders.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single_content  -->
+                    </div>
+                    <div class="tab-pane fade" id="epilepsy" role="tabpanel" aria-labelledby="epilepsy-tab">
+                        <!-- single_content  -->
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-lg-7">
+                                <div class="dept_info">
+                                    <h3>Epilepsy Care & Management</h3>
+                                    <p>Dr. Manish Kumar has 25+ years of experience in epilepsy care, providing comprehensive diagnosis, treatment, and long-term management of seizure disorders. Our clinic offers specialized care for patients with epilepsy, including medication management, lifestyle counseling, and ongoing support to help patients lead fulfilling lives while managing their condition effectively.</p>
+                                    <a href="contact.html" class="dep-btn">Book Appointment<i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="dept_thumb">
+                                    <img src="assets/img/blog/epilepsy.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single_content  -->
+                    </div>
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- depertment area end  -->
+     <!--? Gallery Area Start -->
+     <div class="gallery-area section-padding30">
+        <div class="container">
+            <!-- Section Tittle -->
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-tittle text-center mb-100">
+                        <span>Our Gallery</span>
+                        <h2>Images of Clinic</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Left -->
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/clinic1.jpg);"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/clinic2.jpg);"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/clinic3.jpg);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right -->
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/clinic4.jpg);"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/clinic5.jpg);"></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="single-gallery mb-30">
+                                <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/clinic6.jpg);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Area End -->
+    <!--? Testimonials Start -->
+    <div class="testimonial-area section-padding30">
+        <div class="container">
+            <!-- Section Tittle -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-tittle text-center mb-80">
+                        <span>Patient Testimonials</span>
+                        <h2>What Our Patients Say</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="h1-testimonial-active">
+                        <!-- Testimonial 1 -->
+                        <div class="single-testimonial text-center">
+                            <div class="testimonial-caption">
+                                <div class="testimonial-stars mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">"Dr. Manish Kumar at Mind And Behaviour Clinic is an excellent psychiatrist. His quick service and extremely supportive nature led to my speedy recovery. The clinic is well connected, clean & hygienic, and offers subsidies. I had to wait less than half an hour for my appointment."</p>
+                                <h4 class="testimonial-author">— S. Saha</h4>
+                            </div>
+                        </div>
+                        <!-- Testimonial 2 -->
+                        <div class="single-testimonial text-center">
+                            <div class="testimonial-caption">
+                                <div class="testimonial-stars mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">"Dr. Manish Kumar at Mind And Behaviour Clinic was extremely supportive and understanding. He took the time to listen to my concerns and provided a comprehensive treatment plan. I felt heard and valued as a patient."</p>
+                                <h4 class="testimonial-author">— K. Kumar</h4>
+                            </div>
+                        </div>
+                        <!-- Testimonial 3 -->
+                        <div class="single-testimonial text-center">
+                            <div class="testimonial-caption">
+                                <div class="testimonial-stars mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">"Simply the best, thank you sir!"</p>
+                                <h4 class="testimonial-author">— Surabhi</h4>
+                            </div>
+                        </div>
+                        <!-- Testimonial 4 -->
+                        <div class="single-testimonial text-center">
+                            <div class="testimonial-caption">
+                                <div class="testimonial-stars mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">"I have been taken treatment from last five years for my schizophrenia, now feeling very well by Dr Manish Kumar, my condition has improved so much!"</p>
+                                <h4 class="testimonial-author">— A. Anand</h4>
+                            </div>
+                        </div>
+                        <!-- Testimonial 5 -->
+                        <div class="single-testimonial text-center">
+                            <div class="testimonial-caption">
+                                <div class="testimonial-stars mb-3">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <p class="testimonial-text">"Inke bare me jitna bola jaye o sab kam hai maine apne life me aise doctor se pahli bar mila jo ki real life me hero doctor hai ..itna politely deal karte hai ki pesent ka half bimari bat karne se thik ho jata hai"</p>
+                                <h4 class="testimonial-author">— D. Kumar</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Testimonials End -->
+    <!--? gallery Products Start -->
+    <div class="gallery-area fix">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery1.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery2.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery3.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery4.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                             <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery5.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(assets/img/gallery/gallery6.png);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- gallery Products End -->
+    </main>
+    <footer>
+        <!--? Footer Start-->
+        <div class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.jpg">
+            <div class="container">
+                <div class="footer-top footer-padding">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-8">
+                            <div class="single-footer-caption mb-50">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt="" style="height:80px; width:auto;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Find Us</h4>
+                                    <div class="footer-pera mb-30">
+                                        <p class="info1">Mind and Behaviour Clinic</p>
+                                        <p class="info1">G53, PC Colony, Kankarbagh, Patna 800020</p>
+                                    </div>
+                                    <div class="footer-map">
+                                        <iframe src="https://www.google.com/maps?q=25.601648264692034,85.15607968035522&hl=en&z=14&output=embed" width="100%" height="200" style="border:0; border-radius: 5px;" allowfullscreen="" loading="lazy"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-number mb-50">
+                                    <h4><span>+91 </span>93044 48858</h4>
+                                    <p>manishkumar2003@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-xl-9 col-lg-8">
+                            <div class="footer-copy-right">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4">
+                            <!-- Footer Social -->
+                            <div class="footer-social f-right">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    
+    <!-- counter , waypoint -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    </body>
+</html>

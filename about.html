@@ -1,0 +1,544 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Medical HTML-5 Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/flaticon.css">
+    <link rel="stylesheet" href="assets/css/gijgo.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/animated-headline.css">
+	<link rel="stylesheet" href="assets/css/magnific-popup.css">
+	<link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="assets/css/themify-icons.css">
+	<link rel="stylesheet" href="assets/css/slick.css">
+	<link rel="stylesheet" href="assets/css/nice-select.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<style>
+		/* Clinic name in header */
+		.clinic-name {
+			background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			font-family: 'Georgia', 'Times New Roman', serif;
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: 1px;
+			line-height: 1.3;
+		}
+
+		@media only screen and (max-width: 1199px) {
+			.clinic-name {
+				font-size: 16px;
+				letter-spacing: 0.5px;
+			}
+		}
+
+		@media only screen and (max-width: 991px) {
+			.clinic-name {
+				display: none;
+			}
+		}
+
+		/* Doctor qualifications badge */
+		.qualification-badge {
+			display: inline-block;
+			background: #396cf0;
+			color: white;
+			padding: 5px 15px;
+			margin: 5px;
+			border-radius: 20px;
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		/* Expertise list styling */
+		.expertise-list {
+			list-style: none;
+			padding: 0;
+			margin: 20px 0;
+		}
+
+		.expertise-list li {
+			padding: 10px 0;
+			padding-left: 30px;
+			position: relative;
+			font-size: 16px;
+			line-height: 1.6;
+			color: #10285d;
+		}
+
+		.expertise-list li:before {
+			content: "\f00c";
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			position: absolute;
+			left: 0;
+			color: #396cf0;
+		}
+
+		/* Video section */
+		.video-container {
+			position: relative;
+			width: 100%;
+			padding-bottom: 56.25%;
+			height: 0;
+			overflow: hidden;
+			border-radius: 10px;
+			box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+		}
+
+		.video-container iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		/* Online presence links */
+		.online-presence-links {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 15px;
+			justify-content: center;
+		}
+
+		.presence-link {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 12px 24px;
+			background: white;
+			color: #10285d;
+			border: 2px solid #396cf0;
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: 500;
+			transition: all 0.3s ease;
+			min-width: 160px;
+		}
+
+		.presence-link:hover {
+			background: #396cf0;
+			color: white;
+			transform: translateY(-3px);
+			box-shadow: 0 5px 15px rgba(57, 108, 240, 0.3);
+		}
+
+		.presence-link i {
+			margin-right: 8px;
+			font-size: 18px;
+		}
+
+		@media only screen and (max-width: 767px) {
+			.qualification-badge {
+				font-size: 12px;
+				padding: 4px 12px;
+				margin: 3px;
+			}
+
+			.expertise-list li {
+				font-size: 14px;
+				padding: 8px 0 8px 25px;
+			}
+
+			.presence-link {
+				font-size: 14px;
+				padding: 10px 16px;
+				min-width: 140px;
+			}
+		}
+
+		/* Professional affiliations */
+		.affiliation-badge {
+			display: inline-block;
+			background: #f8f9fa;
+			border-left: 4px solid #396cf0;
+			padding: 15px 20px;
+			margin: 10px 0;
+			width: 100%;
+			text-align: left;
+			font-size: 15px;
+			color: #10285d;
+		}
+
+		.affiliation-badge i {
+			color: #396cf0;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="assets/img/logo/loder.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+<header>
+    <!--? Header Start -->
+    <div class="header-area">
+        <div class="main-header header-sticky">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <!-- Logo -->
+                    <div class="col-xl-4 col-lg-4 col-md-3">
+                        <div class="logo d-flex align-items-center">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="" style="height:80px; width:auto;"></a>
+                            <h3 class="clinic-name ml-3 mb-0">MIND AND BEHAVIOUR CLINIC</h3>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-9">
+                        <div class="menu-main d-flex align-items-center justify-content-end">
+                            <!-- Main-menu -->
+                            <div class="main-menu f-right d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                                <a href="#" class="btn header-btn">01654.066.456</a>
+                            </div>
+                        </div>
+                    </div>   
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+</header>
+<main>
+    <!--? Hero Start -->
+    <div class="slider-area2">
+        <div class="slider-height2 d-flex align-items-center">
+            <div class="container">
+                <div class="row">
+                <div class="col-xl-12">
+                    <div class="hero-cap hero-cap2 text-center">
+                        <h2>About Us</h2>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+    <!--? Doctor Profile Start-->
+    <div class="about-area section-padding2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row align-items-center">
+                        <!-- Doctor Image -->
+                        <div class="col-lg-4 col-md-12 text-center mb-4 mb-lg-0">
+                            <div class="doctor-img">
+                                <img src="assets/img/gallery/team1.png" alt="Dr. Manish Kumar" style="max-width: 100%; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                        <!-- Doctor Info -->
+                        <div class="col-lg-8 col-md-12">
+                            <div class="doctor-info">
+                                <h2 class="mb-3">Dr. Manish Kumar</h2>
+                                <div class="qualifications mb-3">
+                                    <span class="qualification-badge">MBBS</span>
+                                    <span class="qualification-badge">DPM</span>
+                                    <span class="qualification-badge">MD (Psychiatry)</span>
+                                </div>
+                                <p class="mb-3"><strong>MBBS</strong> from Patna Medical College (PMCH), Patna</p>
+                                <p class="mb-3"><strong>DPM & MD in Psychiatry</strong> from Central Institute of Psychiatry (CIP), Kanke, Ranchi, Jharkhand</p>
+                                <p class="mb-4">With over two decades of distinguished service in psychiatric care, Dr. Manish Kumar has emerged as one of Bihar's most respected mental health professionals. A native of Samastipur, Bihar, Dr. Kumar's journey in psychiatry has been marked by unwavering dedication to patient care and continuous professional excellence. He operates two comprehensive psychiatric facilities: his flagship <strong>Mind and Behaviour Clinic</strong> in Kankarbagh, Patna (G53, PC Colony, Near Manju Sinha Smriti Park), and a clinic in his hometown of Samastipur, ensuring accessible mental health care across the region. His extensive training from India's premier psychiatric institutions, combined with hands-on experience at nationally recognized hospitals, enables him to deliver evidence-based, compassionate treatment across the full spectrum of mental health conditions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Doctor Profile End-->
+
+    <!--? Expertise & Specializations Start -->
+    <div class="expertise-area" style="background-color: #f8f9fa; padding: 60px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-tittle text-center mb-50">
+                        <span>Areas of Expertise</span>
+                        <h2>Specializations & Treatments</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12">
+                            <h4 class="mb-3" style="color: #396cf0;">Psychiatric Conditions</h4>
+                            <ul class="expertise-list">
+                                <li>Adult and Child Psychiatry</li>
+                                <li>Addiction Psychiatry & De-addiction</li>
+                                <li>Adolescent Psychiatry</li>
+                                <li>Geriatric Psychiatry & Care</li>
+                                <li>Depression & Anxiety Disorders</li>
+                                <li>Schizophrenia</li>
+                                <li>Obsessive-Compulsive Disorder (OCD)</li>
+                                <li>Sexual Disorders</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <h4 class="mb-3" style="color: #396cf0;">Medical Conditions & Treatments</h4>
+                            <ul class="expertise-list">
+                                <li>Epilepsy Care & Management</li>
+                                <li>Headaches & Migraines</li>
+                                <li>Developmental Pediatrics</li>
+                                <li>Psychological Diagnosis (Adults & Children)</li>
+                                <li>Electroconvulsive Therapy (ECT)</li>
+                                <li>Cognitive Behavioral Therapy (CBT)</li>
+                                <li>Hypnotherapy</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Expertise & Specializations End -->
+
+    <!--? Professional Background Start -->
+    <div class="professional-bg-area section-padding2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-tittle text-center mb-50">
+                        <span>Professional Background</span>
+                        <h2>Experience & Affiliations</h2>
+                    </div>
+                    <div class="professional-content">
+                        <p class="mb-4">Dr. Kumar has previously worked at prestigious institutions including:</p>
+                        <div class="affiliation-badge">
+                            <i class="fas fa-hospital"></i> <strong>PGIMER</strong> (Postgraduate Institute of Medical Education and Research), Chandigarh
+                        </div>
+                        <div class="affiliation-badge">
+                            <i class="fas fa-hospital"></i> <strong>CIP</strong> (Central Institute of Psychiatry), Ranchi
+                        </div>
+                        <div class="affiliation-badge">
+                            <i class="fas fa-hospital"></i> <strong>RINPAS</strong> (Ranchi Institute of Neuro-Psychiatry and Allied Sciences), Ranchi
+                        </div>
+                        <div class="affiliation-badge mt-4">
+                            <i class="fas fa-certificate"></i> <strong>Life Fellow</strong> of the Indian Psychiatric Society
+                        </div>
+                        <div class="affiliation-badge">
+                            <i class="fas fa-certificate"></i> <strong>Life Fellow</strong> of the Industrial Psychiatric Association
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Professional Background End -->
+
+    <!--? YouTube Videos Start -->
+    <div class="videos-area" style="background-color: #f8f9fa; padding: 60px 0;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-tittle text-center mb-50">
+                        <span>Media Coverage</span>
+                        <h2>Featured Videos</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 mb-4 mb-lg-0">
+                            <div class="video-wrapper">
+                                <h5 class="text-center mb-3">Paras HMRI Hospital Feature</h5>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/TqBVC-P3OoQ" title="Paras HMRI Hospital Feature" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12">
+                            <div class="video-wrapper">
+                                <h5 class="text-center mb-3">Republic TV Feature</h5>
+                                <div class="video-container">
+                                    <iframe src="https://www.youtube.com/embed/j1jz3lXbHBk" title="Republic TV Interview" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--YouTube Videos End -->
+
+    <!--? Online Presence Start -->
+    <div class="online-presence-area section-padding2">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-tittle text-center mb-50">
+                        <span>Find Dr. Manish Kumar Online</span>
+                        <h2>Professional Profiles & Reviews</h2>
+                    </div>
+                    <div class="online-presence-links">
+                        <a href="https://www.parashospitals.com/patna/doctor-near-me/psychiatrist/dr-manish-kumar" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-hospital"></i> Paras Hospital
+                        </a>
+                        <a href="https://www.justdial.com/Patna/Dr-Manish-Kumar-Mind-And-Behaviour-Clinic-Beside-Asia-Lab-Kankarbagh/0612PX612-X612-171109095940-U3K4_BZDET" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-search"></i> JustDial
+                        </a>
+                        <a href="https://www.practo.com/patna/doctor/manish-kumar-7-psychiatrist" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-user-md"></i> Practo
+                        </a>
+                        <a href="https://www.lybrate.com/patna/doctor/dr-manish-kumar-psychiatrist" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-stethoscope"></i> Lybrate
+                        </a>
+                        <a href="https://www.docindia.org/doctors/patna/dr-manish-kumar-psychiatry" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-laptop-medical"></i> DocIndia
+                        </a>
+                        <a href="https://www.clinicspots.com/doctor/dr-manish-kumar-5" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-map-marker-alt"></i> ClinicSpots
+                        </a>
+                        <a href="https://www.bajajfinservhealth.in/doctor/patna/psychiatrist/dr-manish-kumar" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-heartbeat"></i> Bajaj Finserv
+                        </a>
+                        <a href="https://www.credihealth.com/doctor/manish-kumar-psychiatrist" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-plus-square"></i> CrediHealth
+                        </a>
+                        <a href="https://www.myupchar.com/en/doctors/patna/kankarbagh/psychiatry/dr-manish-kumar-44598" target="_blank" rel="noopener" class="presence-link">
+                            <i class="fas fa-medkit"></i> MyUpchar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Online Presence End -->
+    </main>
+    <footer>
+        <!--? Footer Start-->
+        <div class="footer-area section-bg" data-background="assets/img/gallery/footer_bg.jpg">
+            <div class="container">
+                <div class="footer-top footer-padding">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-8">
+                            <div class="single-footer-caption mb-50">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt="" style="height:80px; width:auto;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Find Us</h4>
+                                    <div class="footer-pera mb-30">
+                                        <p class="info1">Mind and Behaviour Clinic</p>
+                                        <p class="info1">G53, PC Colony, Kankarbagh, Patna 800020</p>
+                                    </div>
+                                    <div class="footer-map">
+                                        <iframe src="https://www.google.com/maps?q=25.601648264692034,85.15607968035522&hl=en&z=14&output=embed" width="100%" height="200" style="border:0; border-radius: 5px;" allowfullscreen="" loading="lazy"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-number mb-50">
+                                    <h4><span>+91 </span>93044 48858</h4>
+                                    <p>manishkumar2003@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="row d-flex justify-content-between align-items-center">
+                        <div class="col-xl-9 col-lg-8">
+                            <div class="footer-copy-right">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4">
+                            <!-- Footer Social -->
+                            <div class="footer-social f-right">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End-->
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+
+    <!-- JS here -->
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+
+    <!-- Date Picker -->
+    <script src="./assets/js/gijgo.min.js"></script>
+    <!-- Nice-select, sticky -->
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    
+    <!-- counter , waypoint -->
+    <script src="./assets/js/jquery.counterup.min.js"></script>
+    <script src="./assets/js/waypoints.min.js"></script>
+    <script src="./assets/js/jquery.countdown.min.js"></script>
+    <!-- contact js -->
+    <script src="./assets/js/contact.js"></script>
+    <script src="./assets/js/jquery.form.js"></script>
+    <script src="./assets/js/jquery.validate.min.js"></script>
+    <script src="./assets/js/mail-script.js"></script>
+    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    </body>
+</html>
