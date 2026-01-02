@@ -100,7 +100,7 @@
 
 		@media only screen and (max-width: 1199px) {
 			.clinic-name {
-				font-size: 14px;
+				font-size: 18px;
 				letter-spacing: 0.3px;
 			}
 		}
@@ -122,7 +122,12 @@
 			}
 
 			.clinic-name {
-				font-size: 14px;
+				font-size: 18px;
+			}
+
+			/* Make footer narrower */
+			.footer-area .container {
+				max-width: 900px;
 			}
 		}
 
@@ -146,7 +151,7 @@
 		}
 
 		.hero__caption .credentials {
-			font-size: 30px !important;
+			font-size: 25px !important;
 			font-weight: 700 !important;
 			color: #10285d !important;
 			margin-top: 0 !important;
@@ -209,7 +214,7 @@
 			}
 
 			.hero__caption .credentials {
-				font-size: 30px !important;
+				font-size: 25px !important;
 			}
 		}
 
@@ -225,25 +230,25 @@
 			}
 
 			.clinic-name {
-				font-size: 14px;
+				font-size: 18px;
 			}
 
 			/* Footer */
 			.footer-top.footer-padding {
-				padding-top: 40px;
-				padding-bottom: 20px;
+				padding-top: 20px;
+				padding-bottom: 10px;
 			}
 
 			.footer-bottom {
-				padding: 15px 0;
+				padding: 10px 0;
 			}
 
 			.single-footer-caption {
-				margin-bottom: 20px !important;
+				margin-bottom: 10px !important;
 			}
 
 			.footer-number {
-				margin-bottom: 20px !important;
+				margin-bottom: 10px !important;
 			}
 
 			/* Sections */
@@ -298,7 +303,7 @@
 			}
 
 			.hero__caption .credentials {
-				font-size: 30px !important;
+				font-size: 25px !important;
 			}
 		}
 
@@ -346,6 +351,12 @@
 			.doctor-info h4 {
 				font-size: 16px !important;
 			}
+		}
+
+		/* Footer line spacing */
+		.footer-pera .info1 {
+			margin-bottom: 10px;
+			line-height: 1.4;
 		}
 
 		/* Testimonial styling */
@@ -516,7 +527,7 @@
                             <div class="hero__caption">
                                 <span data-animation="fadeInLeft" data-delay="0.1s">Consulting Psychiatrist</span>
                                 <h1 data-animation="fadeInLeft" data-delay="0.3s">Dr. Manish Kumar</h1>
-                                <p class="credentials" data-animation="fadeInLeft" data-delay="0.5s">MBBS (PMCH), MD Psychiatry (CIP, Ranchi), DPM</p>
+                                <p class="credentials" data-animation="fadeInLeft" data-delay="0.5s">MBBS (PMCH, Patna), MD Psychiatry (CIP, Ranchi), DPM</p>
                                 <p class="tagline" data-animation="fadeInLeft" data-delay="0.7s">Your healing journey begins here</p>
                             </div>
                         </div>
@@ -541,7 +552,7 @@
 
                         <p class="mb-3">Dr. Manish Kumar, a senior psychiatrist in Bihar, brings over 25 years of dedicated experience in mental health and psychiatry. With specialized expertise in adult psychiatry, adolescent psychiatry, deaddiction and many more, Dr. Kumar has helped countless individuals and families navigate their mental health journeys with empathy and professional excellence.</p>
 
-                        <p class="mb-4">Whether you're seeking support for addiction, developmental disorders, sleep issues, or any mental health concern, you'll find a safe, non-judgmental space where healing begins. Dr. Kumar's patient-centered approach ensures that every individual receives the care and attention they deserve.</p>
+                        <p class="mb-4">Whether you're seeking support for adult and adolescent behavioral disorders, addiction, developmental disorders, sleep issues, or any mental health concern, you'll find a safe, non-judgmental space where healing begins. Dr. Kumar's patient-centered approach ensures that every individual receives the care and attention they deserve.</p>
 
                         <a href="about.html" class="btn hero-btn">Learn More About Dr. Manish Kumar <i class="ti-arrow-right"></i></a>
                     </div>
@@ -574,7 +585,13 @@
                         <!-- Tabs Buttons -->
                         <ul class="nav" id="myTab" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" id="addiction-tab" data-toggle="tab" href="#addiction" role="tab" aria-controls="addiction" aria-selected="true">
+                                <a class="nav-link active" id="psychiatry-tab" data-toggle="tab" href="#psychiatry" role="tab" aria-controls="psychiatry" aria-selected="true">
+                                    <i class="fas fa-users" style="font-size: 48px;"></i>
+                                    <h4>Adult & Adolescent Psychiatry</h4>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="addiction-tab" data-toggle="tab" href="#addiction" role="tab" aria-controls="addiction" aria-selected="false">
                                     <i class="fas fa-ban" style="font-size: 48px;"></i>
                                     <h4>De-addiction</h4>
                                 </a>
@@ -609,7 +626,25 @@
             </div>
             <div class="dept_main_info white-bg">
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="addiction" role="tabpanel" aria-labelledby="addiction-tab">
+                    <div class="tab-pane fade show active" id="psychiatry" role="tabpanel" aria-labelledby="psychiatry-tab">
+                        <!-- single_content  -->
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-lg-7">
+                                <div class="dept_info">
+                                    <h3>Adult and Adolescent Psychiatry</h3>
+                                    <p>Comprehensive psychiatric evaluation and treatment for both adults and adolescents. Adult psychiatry addresses conditions such as mood disorders, anxiety, stress-related disorders, and psychotic illnesses. Adolescent psychiatry focuses on developmental disorders, behavioral issues, attention deficit disorders, learning disabilities, and emotional problems in children and teenagers. Our approach is tailored to each individual's age, developmental stage, and unique circumstances.</p>
+                                    <a href="contact.html" class="dep-btn">Book Appointment<i class="ti-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="dept_thumb">
+                                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&h=300&fit=crop" alt="Adult and Adolescent Psychiatry">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single_content  -->
+                    </div>
+                    <div class="tab-pane fade" id="addiction" role="tabpanel" aria-labelledby="addiction-tab">
                         <!-- single_content  -->
                         <div class="row align-items-center no-gutters">
                             <div class="col-lg-7">
@@ -923,8 +958,9 @@
                                 <div class="footer-tittle">
                                     <h4>Find Us</h4>
                                     <div class="footer-pera mb-30">
-                                        <p class="info1">Mind and Behaviour Clinic</p>
-                                        <p class="info1">G53, PC Colony, Kankarbagh, Patna 800020</p>
+                                        <p class="info1" style="margin-bottom: 10px; padding-bottom: 0;">Mind and Behaviour Clinic</p>
+                                        <p class="info1" style="margin-bottom: 10px; padding-bottom: 0;">G53, People's Cooperative Colony, Kankarbagh, Patna 80020</p>
+                                        <p class="info1" style="margin-bottom: 0; padding-bottom: 0;">Landmark: Near Manju Sinha Smriti Park</p>
                                     </div>
                                     <div class="footer-map">
                                         <iframe src="https://www.google.com/maps?q=25.601648264692034,85.15607968035522&hl=en&z=14&output=embed" width="100%" height="200" style="border:0; border-radius: 5px;" allowfullscreen="" loading="lazy"></iframe>

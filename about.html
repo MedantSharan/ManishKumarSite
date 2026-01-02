@@ -41,7 +41,7 @@
 
 		@media only screen and (max-width: 1199px) {
 			.clinic-name {
-				font-size: 14px;
+				font-size: 18px;
 				letter-spacing: 0.3px;
 			}
 		}
@@ -63,7 +63,12 @@
 			}
 
 			.clinic-name {
-				font-size: 14px;
+				font-size: 18px;
+			}
+
+			/* Make footer narrower */
+			.footer-area .container {
+				max-width: 900px;
 			}
 		}
 
@@ -348,6 +353,131 @@
 			margin-right: 10px;
 		}
 
+		/* Timeline Styles */
+		.timeline {
+			position: relative;
+			padding: 0;
+			list-style: none;
+		}
+
+		.timeline:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 40px;
+			width: 3px;
+			background: linear-gradient(to bottom, #396cf0, #2a5298);
+		}
+
+		.timeline-item {
+			position: relative;
+			padding: 0 0 30px 80px;
+			margin-bottom: 20px;
+		}
+
+		.timeline-item:last-child {
+			margin-bottom: 0;
+		}
+
+		.timeline-marker {
+			position: absolute;
+			left: 28px;
+			top: 0;
+			width: 26px;
+			height: 26px;
+			border-radius: 50%;
+			background: #396cf0;
+			border: 4px solid #fff;
+			box-shadow: 0 0 0 4px #e3f2fd;
+			z-index: 1;
+		}
+
+		.timeline-content {
+			background: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+			border-left: 3px solid #396cf0;
+		}
+
+		.timeline-content h4 {
+			color: #396cf0;
+			font-size: 18px;
+			font-weight: 700;
+			margin-bottom: 8px;
+		}
+
+		.timeline-content p {
+			color: #10285d;
+			font-size: 15px;
+			margin-bottom: 0;
+			line-height: 1.6;
+		}
+
+		.timeline-content .institution {
+			color: #666;
+			font-size: 14px;
+			font-style: italic;
+		}
+
+		/* Fellowship Badges */
+		.fellowship-badge {
+			display: inline-block;
+			background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+			color: white;
+			padding: 12px 24px;
+			margin: 10px 10px 10px 0;
+			border-radius: 30px;
+			font-size: 15px;
+			font-weight: 600;
+			box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+			transition: all 0.3s ease;
+		}
+
+		.fellowship-badge:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+		}
+
+		.fellowship-badge i {
+			margin-right: 8px;
+		}
+
+		@media only screen and (max-width: 767px) {
+			.timeline:before {
+				left: 20px;
+			}
+
+			.timeline-item {
+				padding: 0 0 20px 50px;
+			}
+
+			.timeline-marker {
+				left: 8px;
+				width: 24px;
+				height: 24px;
+			}
+
+			.timeline-content {
+				padding: 15px;
+			}
+
+			.timeline-content h4 {
+				font-size: 16px;
+			}
+
+			.timeline-content p {
+				font-size: 14px;
+			}
+
+			.fellowship-badge {
+				font-size: 13px;
+				padding: 10px 18px;
+				margin: 5px 5px 5px 0;
+			}
+		}
+
 		/* Doctor profile card styling */
 		.doctor-profile-card {
 			background: #f8f9fa;
@@ -490,8 +620,8 @@
                             <div class="doctor-bio">
                                 <h3 class="mb-4" style="color: #396cf0; font-size: 24px; font-weight: 600;">About Dr. Manish Kumar</h3>
                                 <p class="mb-4" style="line-height: 1.8; text-align: justify;">With over two decades of distinguished service in psychiatric care, Dr. Manish Kumar has emerged as one of Bihar's most respected mental health professionals. Dr. Kumar's journey in psychiatry has been marked by unwavering dedication to patient care and continuous professional excellence.</p>
-                                <p class="mb-4" style="line-height: 1.8; text-align: justify;">He operates his flagship <strong>Mind and Behaviour Clinic</strong> in Kankarbagh, Patna (G53, PC Colony, Near Manju Sinha Smriti Park), while also serving as a Senior Psychiatrist at Paras HMRI Hospital in Patna.</p>
-                                <p style="line-height: 1.8; text-align: justify;">His extensive training from India's premier psychiatric institutions <i> (MBBS from PMCH and MD Psychiatry from CIP Kanke, Jharkhand) </i> combined with hands-on experience at nationally recognized hospitals, enables him to deliver evidence-based, compassionate treatment across the full spectrum of mental health conditions.</p>
+                                <p class="mb-4" style="line-height: 1.8; text-align: justify;">He operates his flagship <strong>Mind and Behaviour Clinic</strong> in Kankarbagh, Patna (G53, PC Colony, Near Manju Sinha Smriti Park), while also serving as a Senior Consultant Psychiatrist at Paras HMRI Hospital, Patna.</p>
+                                <p style="line-height: 1.8; text-align: justify;">His extensive training from India's premier institutions <i> (MBBS from PMCH, Patna and MD Psychiatry from CIP Ranchi, Jharkhand) </i> combined with hands-on experience at nationally recognized hospitals, enables him to deliver evidence-based, compassionate treatment across the full spectrum of mental health conditions.</p>
                             </div>
                         </div>
                     </div>
@@ -548,24 +678,71 @@
                 <div class="col-lg-10">
                     <div class="section-tittle text-center mb-50">
                         <span>Professional Background</span>
-                        <h2>Experience & Affiliations</h2>
+                        <h2>Education & Experience</h2>
                     </div>
-                    <div class="professional-content">
-                        <p class="mb-4">Dr. Kumar has previously worked at prestigious institutions including:</p>
-                        <div class="affiliation-badge">
-                            <i class="fas fa-hospital"></i> <strong>PGIMER</strong> (Postgraduate Institute of Medical Education and Research), Chandigarh
+
+                    <!-- Timeline -->
+                    <div class="row mb-5">
+                        <div class="col-12">
+                            <h3 class="mb-4" style="color: #396cf0; font-size: 22px; font-weight: 600;">Educational & Professional Journey</h3>
+                            <ul class="timeline">
+                                <li class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>MBBS (Hons.)</h4>
+                                        <p class="institution">Patna Medical College and Hospital (PMCH), Patna, Bihar</p>
+                                    </div>
+                                </li>
+                                <li class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>DPM (Diploma in Psychological Medicine)</h4>
+                                        <p class="institution">Central Institute of Psychiatry (CIP), Ranchi, Jharkhand</p>
+                                    </div>
+                                </li>
+                                <li class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>MD (Psychiatry)</h4>
+                                        <p class="institution">Central Institute of Psychiatry (CIP), Ranchi, Jharkhand</p>
+                                    </div>
+                                </li>
+                                <li class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Short Term Clinical Attachment</h4>
+                                        <p class="institution">Department of Neurology, PGIMER Chandigarh</p>
+                                    </div>
+                                </li>
+                                <li class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <h4>Senior Resident Doctor</h4>
+                                        <p class="institution">RINPAS (Ranchi Institute of Neuro-Psychiatry and Allied Sciences), Ranchi</p>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="affiliation-badge">
-                            <i class="fas fa-hospital"></i> <strong>CIP</strong> (Central Institute of Psychiatry), Ranchi
-                        </div>
-                        <div class="affiliation-badge">
-                            <i class="fas fa-hospital"></i> <strong>RINPAS</strong> (Ranchi Institute of Neuro-Psychiatry and Allied Sciences), Ranchi
-                        </div>
-                        <div class="affiliation-badge mt-4">
-                            <i class="fas fa-certificate"></i> <strong>Life Fellow</strong> of the Indian Psychiatric Society
-                        </div>
-                        <div class="affiliation-badge">
-                            <i class="fas fa-certificate"></i> <strong>Life Fellow</strong> of the Industrial Psychiatric Association
+                    </div>
+
+                    <!-- Fellowships & Memberships -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h3 class="mb-4" style="color: #396cf0; font-size: 22px; font-weight: 600;">Fellowships & Professional Memberships</h3>
+                            <div class="fellowships-container">
+                                <span class="fellowship-badge">
+                                    <i class="fas fa-award"></i>Life Fellow of Indian Psychiatric Society
+                                </span>
+                                <span class="fellowship-badge">
+                                    <i class="fas fa-award"></i>Life Fellow of Indian Association of Private Psychiatry
+                                </span>
+                                <span class="fellowship-badge">
+                                    <i class="fas fa-award"></i>Life Fellow of Industrial Psychiatric Association
+                                </span>
+                                <span class="fellowship-badge">
+                                    <i class="fas fa-user-md"></i>Member of American Psychiatric Association
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -682,8 +859,9 @@
                                 <div class="footer-tittle">
                                     <h4>Find Us</h4>
                                     <div class="footer-pera mb-30">
-                                        <p class="info1">Mind and Behaviour Clinic</p>
-                                        <p class="info1">G53, PC Colony, Kankarbagh, Patna 800020</p>
+                                        <p class="info1" style="margin-bottom: 10px; padding-bottom: 0;">Mind and Behaviour Clinic</p>
+                                        <p class="info1" style="margin-bottom: 10px; padding-bottom: 0;">G53, People's Cooperative Colony, Kankarbagh, Patna 80020</p>
+                                        <p class="info1" style="margin-bottom: 0; padding-bottom: 0;">Landmark: Near Manju Sinha Smriti Park</p>
                                     </div>
                                     <div class="footer-map">
                                         <iframe src="https://www.google.com/maps?q=25.601648264692034,85.15607968035522&hl=en&z=14&output=embed" width="100%" height="200" style="border:0; border-radius: 5px;" allowfullscreen="" loading="lazy"></iframe>
