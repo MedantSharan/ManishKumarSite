@@ -27,22 +27,104 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             font-family: 'Georgia', 'Times New Roman', serif;
-            font-size: 18px;
+            font-size: 15px;
             font-weight: 600;
-            letter-spacing: 1px;
-            line-height: 1.3;
+            letter-spacing: 0.5px;
+            line-height: 1.2;
+            white-space: nowrap;
         }
 
         @media only screen and (max-width: 1199px) {
             .clinic-name {
-                font-size: 16px;
-                letter-spacing: 0.5px;
+                font-size: 14px;
+                letter-spacing: 0.3px;
             }
         }
 
         @media only screen and (max-width: 991px) {
             .clinic-name {
                 display: none;
+            }
+        }
+
+        /* PC-only: Reduce header height */
+        @media only screen and (min-width: 992px) {
+            .header-area .main-header {
+                padding: 10px 0;
+            }
+
+            .logo img {
+                height: 60px !important;
+            }
+
+            .clinic-name {
+                font-size: 14px;
+            }
+        }
+
+        /* PC-only: Reduce footer padding and empty space */
+        @media only screen and (min-width: 992px) {
+            .footer-top.footer-padding {
+                padding-top: 40px;
+                padding-bottom: 20px;
+            }
+
+            .footer-bottom {
+                padding: 15px 0;
+            }
+
+            .single-footer-caption {
+                margin-bottom: 20px !important;
+            }
+
+            .footer-number {
+                margin-bottom: 20px !important;
+            }
+        }
+
+        /* Reduce slider/hero area height - ALL SCREENS */
+        .slider-area2 .slider-height2 {
+            min-height: 200px !important;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .slider-area2 .slider-height2 {
+                min-height: 180px !important;
+            }
+
+            .hero-cap2 h2 {
+                font-size: 28px;
+            }
+        }
+
+        @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .slider-area2 .slider-height2 {
+                min-height: 200px !important;
+            }
+
+            .hero-cap2 h2 {
+                font-size: 36px;
+            }
+        }
+
+        /* PC-only: Reduce section padding */
+        @media only screen and (min-width: 992px) {
+            .contact-section {
+                padding: 50px 0;
+            }
+
+            .section-intro {
+                margin-bottom: 40px;
+            }
+
+            .divider {
+                margin: 40px 0;
+            }
+
+            /* Reduce slider/hero area height on PC */
+            .slider-area2 .slider-height2 {
+                min-height: 300px !important;
+                height: 300px !important;
             }
         }
 
@@ -349,9 +431,6 @@
                                         </ul>
                                     </nav>
                                 </div>
-                                <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                    <a href="tel:+919304448858" class="btn header-btn">+91 93044 48858</a>
-                                </div>
                             </div>
                         </div>
                         <!-- Mobile Menu -->
@@ -414,7 +493,6 @@
                                 <div class="contact-info-item">
                                     <i class="fas fa-phone-alt"></i>
                                     <h4>Contact Numbers</h4>
-                                    <p><a href="tel:+919304448858">+91 93044 48858</a></p>
                                     <p><a href="tel:+918969669118">+91 8969669118</a></p>
                                     <p><a href="tel:+916123555060">+91 0612 3555060</a></p>
                                 </div>
@@ -489,7 +567,6 @@
                                     <i class="fas fa-phone-alt"></i>
                                     <h4>Need Help?</h4>
                                     <p>For assistance with online booking:</p>
-                                    <p><a href="tel:+919304448858">+91 93044 48858</a></p>
                                     <p><a href="tel:+918969669118">+91 8969669118</a></p>
                                 </div>
 
@@ -561,8 +638,12 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-number mb-50">
-                                    <h4><span>+91 </span>93044 48858</h4>
-                                    <p>manishkumar2003@gmail.com</p>
+                                    <h4>Contact Us</h4>
+                                    <a href="tel:+918969669118" class="btn" style="background: #396cf0; color: white; padding: 12px 30px; border-radius: 5px; display: inline-flex; align-items: center; margin-bottom: 15px; text-decoration: none; transition: all 0.3s ease;">
+                                        <i class="fas fa-phone-alt" style="margin-right: 10px;"></i>
+                                        <span>+91 8969669118</span>
+                                    </a>
+                                    <p style="margin-top: 15px;">manishkumar2003@gmail.com</p>
                                 </div>
                             </div>
                         </div>

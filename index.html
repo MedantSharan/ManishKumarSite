@@ -91,16 +91,17 @@
 			-webkit-text-fill-color: transparent;
 			background-clip: text;
 			font-family: 'Georgia', 'Times New Roman', serif;
-			font-size: 18px;
+			font-size: 15px;
 			font-weight: 600;
-			letter-spacing: 1px;
-			line-height: 1.3;
+			letter-spacing: 0.5px;
+			line-height: 1.2;
+			white-space: nowrap;
 		}
 
 		@media only screen and (max-width: 1199px) {
 			.clinic-name {
-				font-size: 16px;
-				letter-spacing: 0.5px;
+				font-size: 14px;
+				letter-spacing: 0.3px;
 			}
 		}
 
@@ -108,6 +109,202 @@
 			.clinic-name {
 				display: none;
 			}
+		}
+
+		/* PC-only: Reduce header height */
+		@media only screen and (min-width: 992px) {
+			.header-area .main-header {
+				padding: 10px 0;
+			}
+
+			.logo img {
+				height: 60px !important;
+			}
+
+			.clinic-name {
+				font-size: 14px;
+			}
+		}
+
+		/* Override slider height - make it thinner */
+		.slider-area .single-slider.slider-height,
+		.slider-area .single-slider,
+		.slider-height {
+			min-height: 450px !important;
+			height: 450px !important;
+		}
+
+		/* Hero caption styles - larger name */
+		.hero__caption h1 {
+			font-size: 40px !important;
+			line-height: 1.2 !important;
+			margin-bottom: 8px !important;
+			font-weight: 700 !important;
+			color: #000000 !important;
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;
+			white-space: nowrap;
+		}
+
+		.hero__caption .credentials {
+			font-size: 30px !important;
+			font-weight: 700 !important;
+			color: #10285d !important;
+			margin-top: 0 !important;
+			margin-bottom: 15px !important;
+			line-height: 1.4 !important;
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) !important;
+		}
+
+		.hero__caption .tagline {
+			font-family: 'Georgia', 'Times New Roman', serif !important;
+			font-style: italic !important;
+			font-weight: 700 !important;
+			font-size: 18px !important;
+			color: #10285d !important;
+			margin-top: 10px !important;
+		}
+
+		/* Mobile adjustments */
+		@media only screen and (max-width: 767px) {
+			.slider-area .single-slider.slider-height,
+			.slider-area .single-slider,
+			.slider-height {
+				min-height: 350px !important;
+				height: 350px !important;
+			}
+
+			.hero__caption h1 {
+				font-size: 28px !important;
+				white-space: normal;
+			}
+
+			.hero__caption .credentials {
+				font-size: 20px !important;
+			}
+
+			.hero__caption span {
+				font-size: 12px !important;
+			}
+
+			.hero__caption p {
+				font-size: 12px !important;
+			}
+
+			.hero__caption .tagline {
+				font-size: 14px !important;
+			}
+		}
+
+		/* Tablet adjustments */
+		@media only screen and (min-width: 768px) and (max-width: 991px) {
+			.slider-area .single-slider.slider-height,
+			.slider-area .single-slider,
+			.slider-height {
+				min-height: 400px !important;
+				height: 400px !important;
+			}
+
+			.hero__caption h1 {
+				font-size: 40px !important;
+			}
+
+			.hero__caption .credentials {
+				font-size: 30px !important;
+			}
+		}
+
+		/* PC adjustments */
+		@media only screen and (min-width: 992px) {
+			/* Header */
+			.header-area .main-header {
+				padding: 10px 0;
+			}
+
+			.logo img {
+				height: 60px !important;
+			}
+
+			.clinic-name {
+				font-size: 14px;
+			}
+
+			/* Footer */
+			.footer-top.footer-padding {
+				padding-top: 40px;
+				padding-bottom: 20px;
+			}
+
+			.footer-bottom {
+				padding: 15px 0;
+			}
+
+			.single-footer-caption {
+				margin-bottom: 20px !important;
+			}
+
+			.footer-number {
+				margin-bottom: 20px !important;
+			}
+
+			/* Sections */
+			.section-padding2 {
+				padding-top: 60px;
+				padding-bottom: 60px;
+			}
+
+			.section-padding30 {
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.about-area.section-padding2 {
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.department_area.section-padding2 {
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.gallery-area.section-padding30 {
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.testimonial-area.section-padding30 {
+				padding-top: 50px;
+				padding-bottom: 50px;
+			}
+
+			.section-tittle.mb-100 {
+				margin-bottom: 50px !important;
+			}
+
+			.section-tittle.mb-80 {
+				margin-bottom: 40px !important;
+			}
+
+			/* Hero slider on PC - override */
+			.slider-area .single-slider.slider-height,
+			.slider-area .single-slider,
+			.slider-height {
+				min-height: 480px !important;
+				height: 480px !important;
+			}
+
+			.hero__caption h1 {
+				font-size: 40px !important;
+			}
+
+			.hero__caption .credentials {
+				font-size: 30px !important;
+			}
+		}
+
+		/* Justify text in about section */
+		.about-caption p {
+			text-align: justify;
 		}
 
 		/* Doctor expertise list styling */
@@ -294,9 +491,6 @@
                                     </ul>
                                 </nav>
                             </div>
-                            <div class="header-right-btn f-right d-none d-lg-block ml-30">
-                                <a href="#" class="btn header-btn">+91 93044 48858</a>
-                            </div>
                         </div>
                     </div>   
                     <!-- Mobile Menu -->
@@ -319,15 +513,10 @@
                     <div class="row">
                         <div class="col-xl-7 col-lg-9 col-md-8 col-sm-9">
                             <div class="hero__caption">
-                                <span>Our Head Doctor:</span>
-                                <h1 class="cd-headline letters scale">Dr. Manish Kumar
-                                    <strong class="cd-words-wrapper">
-                                        <b class="is-visible">MBBS</b>
-                                        <b>DPM</b>
-                                        <b>MD</b>
-                                    </strong>
-                                </h1>
-                                <p data-animation="fadeInLeft" data-delay="0.1s">Because your mental health matters.</p>
+                                <span data-animation="fadeInLeft" data-delay="0.1s">Consulting Psychiatrist</span>
+                                <h1 data-animation="fadeInLeft" data-delay="0.3s">Dr. Manish Kumar</h1>
+                                <p class="credentials" data-animation="fadeInLeft" data-delay="0.5s">MBBS (PMCH), MD Psychiatry (CIP, Ranchi), DPM</p>
+                                <p class="tagline" data-animation="fadeInLeft" data-delay="0.7s">Your healing journey begins here</p>
                             </div>
                         </div>
                     </div>
@@ -347,9 +536,9 @@
                             <span>About Our Clinic</span>
                             <h2>Welcome To Mind and Behaviour Clinic</h2>
                         </div>
-                        <p class="mb-3">At Mind and Behaviour Clinic, your mental well-being is our priority. Founded and personally managed by <strong>Dr. Manish Kumar</strong>, our clinic offers a compassionate and personalized approach to mental health care in the heart of Kankarbagh, Patna.</p>
+                        <p class="mb-3">At Mind and Behaviour Clinic, your mental well-being is our priority. Founded and personally managed by <strong>Dr. Manish Kumar</strong>, our clinic offers a compassionate and personalized approach to mental health care in the heart of Bihar.</p>
 
-                        <p class="mb-3">Dr. Manish Kumar, a Senior Consultant in Psychiatry at Paras HMRI Hospital, brings over 25 years of dedicated experience in mental health and psychiatry. With specialized expertise in De-addiction, Adolescent Psychiatry, Geriatric Care, and childhood psychiatric disorders, Dr. Kumar has helped countless individuals and families navigate their mental health journeys with empathy and professional excellence.</p>
+                        <p class="mb-3">Dr. Manish Kumar, a senior psychiatrist in Bihar, brings over 25 years of dedicated experience in mental health and psychiatry. With specialized expertise in adult psychiatry, adolescent psychiatry, deaddiction and many more, Dr. Kumar has helped countless individuals and families navigate their mental health journeys with empathy and professional excellence.</p>
 
                         <p class="mb-4">Whether you're seeking support for addiction, developmental disorders, sleep issues, or any mental health concern, you'll find a safe, non-judgmental space where healing begins. Dr. Kumar's patient-centered approach ensures that every individual receives the care and attention they deserve.</p>
 
@@ -745,8 +934,12 @@
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8">
                             <div class="single-footer-caption mb-50">
                                 <div class="footer-number mb-50">
-                                    <h4><span>+91 </span>93044 48858</h4>
-                                    <p>manishkumar2003@gmail.com</p>
+                                    <h4>Contact Us</h4>
+                                    <a href="tel:+918969669118" class="btn" style="background: #396cf0; color: white; padding: 12px 30px; border-radius: 5px; display: inline-flex; align-items: center; margin-bottom: 15px; text-decoration: none; transition: all 0.3s ease;">
+                                        <i class="fas fa-phone-alt" style="margin-right: 10px;"></i>
+                                        <span>+91 8969669118</span>
+                                    </a>
+                                    <p style="margin-top: 15px;">manishkumar2003@gmail.com</p>
                                 </div>
                             </div>
                         </div>
